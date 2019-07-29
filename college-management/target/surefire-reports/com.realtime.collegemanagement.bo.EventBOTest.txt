@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: com.realtime.collegemanagement.bo.EventBOTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.433 s <<< FAILURE! - in com.realtime.collegemanagement.bo.EventBOTest
+initializationError(com.realtime.collegemanagement.bo.EventBOTest)  Time elapsed: 0.018 s  <<< ERROR!
+java.lang.Exception: No runnable methods
+

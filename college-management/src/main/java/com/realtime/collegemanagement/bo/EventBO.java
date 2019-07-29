@@ -52,5 +52,28 @@ public class EventBO {
 		return null;
 
 	}
+	
+	public String deleteEvent(Event event){
+		
+		String result = null;
+		
+
+		Optional<Event> existingEventDetails = eventDAO.findById(event
+				.getEventId());
+
+		Event existingDetails = existingEventDetails.get();
+		
+		if(existingDetails != null){
+			eventDAO.delete(existingDetails);
+			
+			result = "records deleted successsfully.";
+			
+		}else{
+			result = "records not deleted successsfully.";
+		}
+		return result;
+
+		
+	}
 
 }

@@ -1,0 +1,15 @@
+com\realtime\collegemanagement\dao\EventDAO.class
+com\realtime\collegemanagement\controller\FacultyController.class
+com\realtime\collegemanagement\entities\Event.class
+com\realtime\collegemanagement\bo\FacultyBO.class
+com\realtime\collegemanagement\entities\Faculty.class
+com\realtime\collegemanagement\controller\StudentController.class
+com\realtime\collegemanagement\models\FacultyModel.class
+com\realtime\collegemanagement\bo\StudentBO.class
+com\realtime\collegemanagement\models\StudentModel.class
+com\realtime\collegemanagement\controller\EventController.class
+com\realtime\collegemanagement\entities\Student.class
+com\realtime\collegemanagement\bo\EventBO.class
+com\realtime\collegemanagement\dao\StudentDAO.class
+com\realtime\collegemanagement\dao\FacultyDAO.class
+com\realtime\collegemanagement\CollegeManagementApplication.class

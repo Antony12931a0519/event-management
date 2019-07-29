@@ -19,7 +19,7 @@ public class EventController {
 	@Autowired
 	EventBO eventBO;
 
-	@RequestMapping(value = "/", produces = "application/json", method = { RequestMethod.GET })
+	@RequestMapping(value = "/dfg", produces = "application/json", method = { RequestMethod.GET })
 	@ResponseBody
 	public String showWelcomeMessage() {
 
@@ -36,37 +36,48 @@ public class EventController {
 	@RequestMapping(value = "/events/list", produces = "application/json", method = { RequestMethod.GET })
 	@ResponseBody
 	public List<Event> getEventsList() {
-
+		
 		return eventBO.getEventList();
+
+		 
 	}
-	
-	@RequestMapping(value = "/events/add",
-			produces = "application/json",
-			consumes = "application/json",
-			method = { RequestMethod.POST })
+
+	@RequestMapping(value = "/events/add", produces = "application/json", consumes = "application/json", method = { RequestMethod.POST })
 	@ResponseBody
 	public String getEventsList(@RequestBody Event event) {
 
-		event =  eventBO.createStudent(event);
-		
-		if(event != null)
+		event = eventBO.createStudent(event);
+
+		if (event != null)
 			return "event details are ceated sucessfully.";
-		else 
+		else
 			return "event details are not ceated sucessfully.";
 	}
-	
-	@RequestMapping(value = "/events/update",
-			produces = "application/json",
-			consumes = "application/json",
-			method = { RequestMethod.PUT })
+
+	@RequestMapping(value = "/events/update", produces = "application/json", consumes = "application/json", method = { RequestMethod.PUT })
 	@ResponseBody
 	public Event updateEvent(@RequestBody Event event) {
 
-		event =  eventBO.updateEvent(event);
-		
-		if(event != null)
+		event = eventBO.updateEvent(event);
+
+		if (event != null)
 			return event;
-		else 
+		else
+			return null;
+	}
+
+	@RequestMapping(value = "/events/delete",
+			produces = "application/json",
+			consumes = "application/json",
+			method = { RequestMethod.DELETE })
+	@ResponseBody
+	public String deleteEvent(@RequestBody Event event) {
+
+		String result = eventBO.deleteEvent(event);
+
+		if (result != null)
+			return result;
+		else
 			return null;
 	}
 

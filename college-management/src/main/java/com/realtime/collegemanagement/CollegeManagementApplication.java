@@ -6,23 +6,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-
 public class CollegeManagementApplication {
-	
-	public final static Log logger = LogFactory.getLog(CollegeManagementApplication.class);
+
+	public final static Log logger = LogFactory
+			.getLog(CollegeManagementApplication.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(CollegeManagementApplication.class, args);
-		
-		logger.info("in main method");
-		logger.info("in main method");
-		logger.info("in main method");
-		logger.info("in main method");
-		logger.info("in main method");
-		logger.info("in main method");
-		
-		
-		
+
 	}
 
 }
