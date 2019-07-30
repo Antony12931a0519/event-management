@@ -41,9 +41,9 @@ public class StudentNamesBO {
 		StudentNames student = existingDetails.get();
 
 		if (student != null) {
-			
+
 			student.setSname(studentNames.getSname());
-			
+
 			studentNamesDAO.save(student);
 
 		} else {
@@ -51,6 +51,31 @@ public class StudentNamesBO {
 			throw new Exception("Student details are not existing");
 		}
 		return student;
+
+	}
+
+	public String deleteStudentDetails(StudentNames studentNames)
+			throws Exception {
+
+		String result = null;
+
+		Optional<StudentNames> object = studentNamesDAO.findById(studentNames
+				.getSid());
+
+		StudentNames studentDetails = object.get();
+
+		if (studentDetails != null) {
+
+			studentNamesDAO.delete(studentDetails);
+			result = "Student Details deleted Successfully.";
+
+		} else {
+
+			throw new Exception("Student details are not existing in the db");
+		}
+		//result = "Student Details are  not deleted Successfully.";
+
+		return result;
 
 	}
 
