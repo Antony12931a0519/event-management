@@ -40,23 +40,27 @@ public class StudentsController {
 
 	}
 
-	@RequestMapping(value = "/student/add",
-			produces = "application/json",
-			consumes = "application/json",
-			method = { RequestMethod.POST })
-	public StudentNames inserttudentDetails(@RequestBody StudentNames studentNames) {
+	@RequestMapping(value = "/student/add", produces = "application/json", consumes = "application/json", method = { RequestMethod.POST })
+	public StudentNames inserttudentDetails(
+			@RequestBody StudentNames studentNames) {
 
 		return studentNamesBO.insertStudentDetails(studentNames);
 
 	}
-	
-	@RequestMapping(value = "/student/update",
-			produces = "application/json",
-			consumes = "application/json",
-			method = { RequestMethod.PUT })
-	public StudentNames updateStudentDetails(@RequestBody StudentNames studentNames) throws Exception {
+
+	@RequestMapping(value = "/student/update", produces = "application/json", consumes = "application/json", method = { RequestMethod.PUT })
+	public StudentNames updateStudentDetails(
+			@RequestBody StudentNames studentNames) throws Exception {
 
 		return studentNamesBO.updateStudentDetails(studentNames);
+
+	}
+
+	@RequestMapping(value = "/student/delete", produces = "application/json", consumes = "application/json", method = { RequestMethod.DELETE })
+	public String deleteStudentDetails(@RequestBody StudentNames studentNames)
+			throws Exception {
+
+		return studentNamesBO.deleteStudentDetails(studentNames);
 
 	}
 
