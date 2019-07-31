@@ -1,4 +1,4 @@
-/*package com.realtime.collegemanagement.swagger.config;
+package com.realtime.collegemanagement.swagger.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +14,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-//jshsfsjhfeij
 public class SwaggerConfig {
 	@Bean
 	public Docket api() {
@@ -37,4 +36,4 @@ public class SwaggerConfig {
 				.licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
 				.version("1.0.0").build();
 	}
-}*/
+}

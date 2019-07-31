@@ -10,6 +10,7 @@ public class StudentNames {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int sid;
+	private String sname;
 
 	/**
 	 * @return the sid
@@ -41,6 +42,6 @@ public class StudentNames {
 		this.sname = sname;
 	}
 
-	private String sname;
+	
 
 }

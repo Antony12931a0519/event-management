@@ -53,6 +53,29 @@ public class StudentNamesBO {
 		return student;
 
 	}
+	
+	public StudentNames updateStudentDetailsByStudentId(int studentId)
+			throws Exception {
+
+		Optional<StudentNames> existingDetails = studentNamesDAO
+				.findById(studentId);
+		StudentNames student = existingDetails.get();
+
+		if (student != null) {
+
+			student.setSname("Abcdef");
+
+			studentNamesDAO.save(student);
+
+		} else {
+
+			throw new Exception("Student details are not existing");
+		}
+		return student;
+
+	}
+	
+	
 
 	public String deleteStudentDetails(StudentNames studentNames)
 			throws Exception {

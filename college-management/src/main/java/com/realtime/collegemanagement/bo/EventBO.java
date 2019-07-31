@@ -16,7 +16,14 @@ public class EventBO {
 
 	public List<Event> getEventList() {
 
-		List<Event> events = (List<Event>) eventDAO.findAll();
+		List<Event> events  = null;
+		try {
+			events	= (List<Event>) eventDAO.findAll();
+		} catch (Exception e) {
+			// TODO: handle exception
+//			e.printStackTrace();
+//			e.getMessage();
+		}
 		return events;
 	}
 
@@ -52,28 +59,26 @@ public class EventBO {
 		return null;
 
 	}
-	
-	public String deleteEvent(Event event){
-		
+
+	public String deleteEvent(Event event) {
+
 		String result = null;
-		
 
 		Optional<Event> existingEventDetails = eventDAO.findById(event
 				.getEventId());
 
 		Event existingDetails = existingEventDetails.get();
-		
-		if(existingDetails != null){
+
+		if (existingDetails != null) {
 			eventDAO.delete(existingDetails);
-			
+
 			result = "records deleted successsfully.";
-			
-		}else{
+
+		} else {
 			result = "records not deleted successsfully.";
 		}
 		return result;
 
-		
 	}
 
 }
